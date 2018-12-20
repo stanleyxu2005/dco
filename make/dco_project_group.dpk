@@ -1,0 +1,54 @@
+package dipc_project_group;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  dutil_rxe2;
+
+contains
+  dipc.jsonrpc.framework.Backlog in '..\src\dipc.jsonrpc.framework.Backlog.pas',
+  dipc.jsonrpc.framework.NotificationHandler in '..\src\dipc.jsonrpc.framework.NotificationHandler.pas',
+  dipc.jsonrpc.framework.Receiver in '..\src\dipc.jsonrpc.framework.Receiver.pas',
+  dipc.jsonrpc.framework.RequestHandler in '..\src\dipc.jsonrpc.framework.RequestHandler.pas',
+  dipc.jsonrpc.framework.Sender in '..\src\dipc.jsonrpc.framework.Sender.pas',
+  dipc.jsonrpc.framework.SenderImpl in '..\src\dipc.jsonrpc.framework.SenderImpl.pas',
+  dipc.jsonrpc.message.Decoder in '..\src\dipc.jsonrpc.message.Decoder.pas',
+  dipc.jsonrpc.message.Encoder in '..\src\dipc.jsonrpc.message.Encoder.pas',
+  dipc.jsonrpc.message.Error in '..\src\dipc.jsonrpc.message.Error.pas',
+  dipc.jsonrpc.message.Handler in '..\src\dipc.jsonrpc.message.Handler.pas',
+  dipc.jsonrpc.message.Identifier in '..\src\dipc.jsonrpc.message.Identifier.pas',
+  dipc.jsonrpc.message.JsonRpcException in '..\src\dipc.jsonrpc.message.JsonRpcException.pas',
+  dipc.wmchannel.Address in '..\src\dipc.wmchannel.Address.pas',
+  dipc.wmchannel.Connection in '..\src\dipc.wmchannel.Connection.pas',
+  dipc.wmchannel.ConnectionMessage in '..\src\dipc.wmchannel.ConnectionMessage.pas',
+  dipc.wmchannel.ConnectionOutputQueue in '..\src\dipc.wmchannel.ConnectionOutputQueue.pas',
+  dipc.wmchannel.MessageProxy in '..\src\dipc.wmchannel.MessageProxy.pas';
+
+end.

@@ -1,0 +1,1 @@
+thrift.exe --gen delphi --out . -v rpc.thrift

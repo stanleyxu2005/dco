@@ -1,0 +1,62 @@
+package dco;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  dutil_rtl;
+
+contains
+  dco.util.ThreadedConsumer in '..\src\dco.util.ThreadedConsumer.pas',
+  dco.framework.Backlog in '..\src\dco.framework.Backlog.pas',
+  dco.framework.Command in '..\src\dco.framework.Command.pas',
+  dco.framework.Executor in '..\src\dco.framework.Executor.pas',
+  dco.framework.ExecutorImpl in '..\src\dco.framework.ExecutorImpl.pas',
+  dco.framework.Handler in '..\src\dco.framework.Handler.pas',
+  dco.framework.RemotingSystem in '..\src\dco.framework.RemotingSystem.pas',
+  dco.framework.RPCObjectImpl in '..\src\dco.framework.RPCObjectImpl.pas',
+  dco.rpc.ErrorObject in '..\src\dco.rpc.ErrorObject.pas',
+  dco.rpc.Identifier in '..\src\dco.rpc.Identifier.pas',
+  dco.rpc.jsonrpc.Decoder in '..\src\dco.rpc.jsonrpc.Decoder.pas',
+  dco.rpc.jsonrpc.Encoder in '..\src\dco.rpc.jsonrpc.Encoder.pas',
+  dco.rpc.jsonrpc.JSONRPCSerializerImpl in '..\src\dco.rpc.jsonrpc.JSONRPCSerializerImpl.pas',
+  dco.rpc.RPCException in '..\src\dco.rpc.RPCException.pas',
+  dco.rpc.RPCHandler in '..\src\dco.rpc.RPCHandler.pas',
+  dco.rpc.Serializer in '..\src\dco.rpc.Serializer.pas',
+  dco.transport.AbstractTransportImpl in '..\src\dco.transport.AbstractTransportImpl.pas',
+  dco.transport.Connection in '..\src\dco.transport.Connection.pas',
+  dco.transport.ConnectionImpl in '..\src\dco.transport.ConnectionImpl.pas',
+  dco.transport.np.NamedPipeTransportImpl in '..\src\dco.transport.np.NamedPipeTransportImpl.pas',
+  dco.transport.Pdu in '..\src\dco.transport.Pdu.pas',
+  dco.transport.Transport in '..\src\dco.transport.Transport.pas',
+  dco.transport.Uri in '..\src\dco.transport.Uri.pas',
+  dco.transport.wm.WMTransportImpl in '..\src\dco.transport.wm.WMTransportImpl.pas';
+
+end.
+

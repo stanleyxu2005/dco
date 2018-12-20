@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7AFBA66E-F46A-42E6-9CF7-536EB70EEBE9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="dco.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dco_tests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="dco">
+        <MSBuild Projects="dco.dproj"/>
+    </Target>
+    <Target Name="dco:Clean">
+        <MSBuild Projects="dco.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dco:Make">
+        <MSBuild Projects="dco.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dco_tests">
+        <MSBuild Projects="dco_tests.dproj"/>
+    </Target>
+    <Target Name="dco_tests:Clean">
+        <MSBuild Projects="dco_tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dco_tests:Make">
+        <MSBuild Projects="dco_tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="dco;dco_tests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="dco:Clean;dco_tests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="dco:Make;dco_tests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
